@@ -1,0 +1,82 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - portfolio
+  - last_trans
+  - trade
+  - buy
+  - buy_details
+  - order_type_market
+  - order_type_limit
+  - limit_price
+
+slots:
+  quantity:
+    type: unfeaturized
+  ticker:
+    type: unfeaturized
+  types:
+    type: unfeaturized
+  price:
+    type: unfeaturized
+  last_price:
+    type: unfeaturized
+    
+actions:
+  - action_portfolio
+  - action_last_trans
+  - action_buy
+  - action_slots
+
+responses:
+  utter_details:
+  - text: "Ok!!! Great... Wait for a moment your order is submitting in the market..."
+
+  utter_limit_price:
+  - text: "Current price of {ticker} stock is ${last_price}, what is your limit price?"
+  
+  utter_order_type:
+  - text: "what type of order you want to submit as:- Market order or, Limit order?"
+
+  utter_buy_details:
+  - text: "which company stock are you invest in it and what is the quantity?"
+  
+  utter_trade:
+  - text: "Great!,So are you Going to Buy or, Sell the Stocks?"
+
+  utter_greet:
+  - text: "Hey! How may i help you?"
+
+  utter_end_greet:
+  - text: "Anything else, In which I help You?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+entities:
+  - quantity
+  - ticker
+  - types
+  - price
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
